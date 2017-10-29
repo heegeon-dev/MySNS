@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     tools:context="com.example.gmlrj.mysns.MainActivity"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="81dp">
@@ -12,17 +13,16 @@
         android:id="@+id/et_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="59dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="234dp"
         android:ems="10"
         android:hint="Search"
         android:inputType="textPersonName"
-        android:textColorLink="#000000"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="412dp"
-        tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="754dp" />
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
     <ImageButton
         android:id="@+id/bt_search"
@@ -31,14 +31,14 @@
         app:srcCompat="?android:attr/actionModeWebSearchDrawable"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
-        android:layout_marginStart="38dp"
-        android:layout_marginEnd="41dp"
+        android:layout_marginStart="11dp"
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintTop_toTopOf="@+id/et_search"
         app:layout_constraintLeft_toRightOf="@+id/et_search"
-        android:layout_marginTop="198dp"
-        app:layout_constraintHorizontal_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.367"
+        android:layout_alignTop="@+id/et_search"
+        android:layout_toEndOf="@+id/et_search" />
 
     <TextView
         android:id="@+id/tv_title"
@@ -49,9 +49,10 @@
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toTopOf="@+id/et_search"
-        android:layout_marginEnd="31dp"
         app:layout_constraintRight_toRightOf="@+id/et_search"
-        android:layout_marginBottom="-182dp"
-        android:layout_marginRight="-682dp" />
+        android:layout_marginBottom="27dp"
+        android:layout_marginRight="30dp"
+        android:layout_above="@+id/bt_search"
+        android:layout_centerHorizontal="true" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
