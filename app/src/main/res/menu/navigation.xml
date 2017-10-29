@@ -6,7 +6,7 @@
         android:icon="@drawable/ic_search"
         android:enabled="true"
         app:showAsAction="ifRoom"
-        android:title="" />
+        android:title="Home" />
 
     <item
         android:id="@+id/profil"
