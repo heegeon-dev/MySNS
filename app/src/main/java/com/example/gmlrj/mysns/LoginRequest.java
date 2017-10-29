@@ -8,11 +8,11 @@ import java.util.Map;
 
 
 public class LoginRequest extends StringRequest {
-    final static private String URL = "http://172.31.38.151/";
+    final static private String URL = "http://172.30.1.41/Login.php";
     private Map<String, String> parameters;
 
     public LoginRequest(String userID, String userPW, Response.Listener<String> listener) {
-        super(Method.POST, URL+"Login.php", listener, null);
+        super(Method.POST, URL, listener, null);
         parameters = new HashMap<>();
         parameters.put("userID", userID);
         parameters.put("userPW", userPW);
