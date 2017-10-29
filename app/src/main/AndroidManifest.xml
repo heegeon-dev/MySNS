@@ -25,7 +25,12 @@
         <activity
             android:name=".NaviActivity"
             android:label="@string/title_activity_navi" />
-        <activity android:name=".EditActivity"></activity>
+        <activity android:name=".EditActivity"
+                   android:label="EditActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".EditActivity"/>
+        </activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
