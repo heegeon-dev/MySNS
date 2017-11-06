@@ -31,6 +31,7 @@ public class EditActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.action_submit:
                 Toast.makeText(this,"submit",Toast.LENGTH_SHORT).show();
+                NavUtils.navigateUpFromSameTask(this);
                 return true;
             case R.id.home:
                 NavUtils.navigateUpFromSameTask(this);

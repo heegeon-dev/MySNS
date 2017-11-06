@@ -23,11 +23,17 @@ public class SocialFragment extends Fragment {
         listview = (ListView) view.findViewById(R.id.listView);
         listview.setAdapter(adapter);
 
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_add),
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_location),
                 "Box", "Account Box Black 36dp") ;
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_back),
                 "Circle", "Account Circle Black 36dp") ;
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_edit),
+                "Ind", "Assignment Ind Black 36dp") ;
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_people),
+                "Ind", "Assignment Ind Black 36dp") ;
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_search),
+                "Ind", "Assignment Ind Black 36dp") ;
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_setting),
                 "Ind", "Assignment Ind Black 36dp") ;
         return view;
     }
