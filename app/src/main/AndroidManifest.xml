@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gmlrj.mysns">
 
-   <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -26,11 +26,12 @@
         <activity
             android:name=".NaviActivity"
             android:label="@string/title_activity_navi" />
-        <activity android:name=".EditActivity"
-                   android:label="EditActivity">
+        <activity
+            android:name=".EditActivity"
+            android:label="EditActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".EditActivity"/>
+                android:value=".EditActivity" />
         </activity>
 
         <meta-data
