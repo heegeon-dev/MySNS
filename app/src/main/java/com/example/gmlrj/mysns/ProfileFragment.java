@@ -18,6 +18,7 @@ public class ProfileFragment extends Fragment {
         ImageButton bt_add = (ImageButton) view.findViewById(R.id.bt_add);
         ListView listview = (ListView) view.findViewById(R.id.listView);
         ListViewAdapter adapter = new ListViewAdapter() ;
+/*
 
         listview.setAdapter(adapter);
 
@@ -33,6 +34,7 @@ public class ProfileFragment extends Fragment {
                 "Ind", "Assignment Ind Black 36dp") ;
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_setting),
                 "Ind", "Assignment Ind Black 36dp") ;
+*/
 
         bt_add.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
