@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -37,6 +36,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBcA5Vm3AkIn-UkgESkuHlNIlgeXvcdYFs" />
 
+        <activity android:name=".ChangePWActivity"></activity>
     </application>
 
 </manifest>
