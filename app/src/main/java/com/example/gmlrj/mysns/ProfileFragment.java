@@ -16,11 +16,14 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.profile_fragment, container, false);
         ImageButton bt_add = (ImageButton) view.findViewById(R.id.bt_add);
-        ListView listview = (ListView) view.findViewById(R.id.listView);
-        ListViewAdapter adapter = new ListViewAdapter() ;
-/*
 
-        listview.setAdapter(adapter);
+        ListView listView ;
+        ListViewAdapter adapter;
+
+        adapter = new ListViewAdapter() ;
+
+        listView = (ListView) view.findViewById(R.id.listview_pf);
+        listView.setAdapter(adapter);
 
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_location),
                 "Box", "Account Box Black 36dp") ;
@@ -34,7 +37,7 @@ public class ProfileFragment extends Fragment {
                 "Ind", "Assignment Ind Black 36dp") ;
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_setting),
                 "Ind", "Assignment Ind Black 36dp") ;
-*/
+
 
         bt_add.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {

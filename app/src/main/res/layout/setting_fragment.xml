@@ -27,7 +27,7 @@
         android:text="Change Profile Picture" />
 
     <ListView
-        android:id="@+id/listview"
+        android:id="@+id/listview_st"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"

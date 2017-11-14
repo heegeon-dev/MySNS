@@ -12,26 +12,22 @@ public class SettingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.setting_fragment, container, false);
+
         ListView listview ;
         ListViewAdapter adapter;
 
         adapter = new ListViewAdapter() ;
 
-        listview = (ListView) view.findViewById(R.id.listView);
+        listview = (ListView) view.findViewById(R.id.listview_st);
         listview.setAdapter(adapter);
 
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_location),
-                "Box", "Account Box Black 36dp") ;
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_back),
-                "Circle", "Account Circle Black 36dp") ;
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_edit),
-                "Ind", "Assignment Ind Black 36dp") ;
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_people),
-                "Ind", "Assignment Ind Black 36dp") ;
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_search),
-                "Ind", "Assignment Ind Black 36dp") ;
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_setting),
-                "Ind", "Assignment Ind Black 36dp") ;
+
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_edit), "password") ;
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_edit), "Setting") ;
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_edit), "Setting") ;
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_edit), "Setting") ;
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_edit), "Setting") ;
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_edit), "Setting") ;
         return view;
     }
 }
