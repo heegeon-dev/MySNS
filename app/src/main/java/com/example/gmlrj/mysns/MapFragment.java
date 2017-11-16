@@ -2,12 +2,14 @@ package com.example.gmlrj.mysns;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -45,6 +47,15 @@ public class MapFragment extends Fragment implements OnMapReadyCallback
 
             mapView = (MapView)layout.findViewById(R.id.map);
             mapView.getMapAsync(this);
+
+            ImageButton bt_ar = (ImageButton) layout.findViewById(R.id.bt_ar);
+
+            bt_ar.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    Intent intent = new Intent(getActivity(), ARActivity.class);
+                    MapFragment.this.startActivity(intent);
+                }
+            });
 
             return layout;
         }

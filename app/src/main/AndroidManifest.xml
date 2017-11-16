@@ -37,7 +37,8 @@
             android:value="AIzaSyBcA5Vm3AkIn-UkgESkuHlNIlgeXvcdYFs" />
 
         <activity android:name=".ChangePWActivity" />
-        <activity android:name=".DeveloperActivity"></activity>
+        <activity android:name=".DeveloperActivity" />
+        <activity android:name=".ARActivity"></activity>
     </application>
 
 </manifest>
