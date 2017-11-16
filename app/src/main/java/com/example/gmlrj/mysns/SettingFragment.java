@@ -25,17 +25,22 @@ public class SettingFragment extends Fragment{
         listview.setAdapter(adapter);
 
 
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_edit), "password") ;
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_edit), "Setting") ;
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_edit), "Setting") ;
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_edit), "Setting") ;
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_edit), "Setting") ;
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_edit), "Setting") ;
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_lock), "비밀번호 바꾸기") ;
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_build), "개발자") ;
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_build), "Setting") ;
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_build), "Setting") ;
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_build), "Setting") ;
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_build), "Setting") ;
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                 if(position==0){
                     Intent intent = new Intent(getActivity(), ChangePWActivity.class);
+                    SettingFragment.this.startActivity(intent);
+                    Log.d("Intent Call","Call List" + position);
+                }
+                if(position==1){
+                    Intent intent = new Intent(getActivity(), DeveloperActivity.class);
                     SettingFragment.this.startActivity(intent);
                     Log.d("Intent Call","Call List" + position);
                 }

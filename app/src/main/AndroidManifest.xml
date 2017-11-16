@@ -36,7 +36,8 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBcA5Vm3AkIn-UkgESkuHlNIlgeXvcdYFs" />
 
-        <activity android:name=".ChangePWActivity"></activity>
+        <activity android:name=".ChangePWActivity" />
+        <activity android:name=".DeveloperActivity"></activity>
     </application>
 
 </manifest>

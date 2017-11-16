@@ -17,10 +17,9 @@
         android:id="@+id/tv_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/iv_image"
-        android:layout_marginStart="13dp"
-        android:layout_toEndOf="@+id/iv_image"
         android:text="Menu"
-        android:textSize="30sp"
-        android:layout_alignTop="@+id/iv_image" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:layout_alignBottom="@+id/iv_image"
+        android:layout_toEndOf="@+id/iv_image"
+        android:layout_marginStart="11dp" />
 </RelativeLayout>
