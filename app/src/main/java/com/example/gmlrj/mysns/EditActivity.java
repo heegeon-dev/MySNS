@@ -1,13 +1,25 @@
 package com.example.gmlrj.mysns;
 
+import android.app.AlertDialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
 
 public class EditActivity extends AppCompatActivity {
 
@@ -16,20 +28,60 @@ public class EditActivity extends AppCompatActivity {
     private Bitmap image_bitmap;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        iv_image = (ImageView) this.findViewById(R.id.ImageView);
-    }
-
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_edit, menu);
         return true;
     }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_edit);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
+        final EditText et_title = (EditText) findViewById(R.id.et_title);
+        final ImageView iv_photo = (ImageView) findViewById(R.id.iv_photo);
+        final EditText et_text = (EditText) findViewById(R.id.et_text);
+
+        Button bt_submit = (Button) findViewById(R.id.action_submit);
+
+        bt_submit.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                String title = et_title.getText().toString();
+                String text = et_text.getText().toString();
+
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try{
+                            JSONObject jsonResponse = new JSONObject(response);
+                            boolean success = jsonResponse.getBoolean("success");
+                            if(success){
+                                Intent intent = new Intent(EditActivity.this, ProfileFragment.class);
+                                EditActivity.this.startActivity(intent);
+                            }
+                            else{
+                                AlertDialog.Builder builer = new AlertDialog.Builder(EditActivity.this);
+                                builer.setMessage("글쓰기에 실패하였습니다.")
+                                        .setNegativeButton("다시 시도",null)
+                                        .create()
+                                        .show();
+                            }
+
+                        } catch (Exception e){
+                            e.printStackTrace();
+                        }
+                    }
+                };
+                EditRequest editRequest = new EditRequest(title, text, responseListener);
+                RequestQueue queue = Volley.newRequestQueue(EditActivity.this);
+                queue.add(editRequest);
+            }
+        });
+    }
+
 
 //    @Override
 //    public boolean onOptionsItemSelected(MenuItem item) {

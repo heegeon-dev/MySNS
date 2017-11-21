@@ -7,15 +7,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class LoginRequest extends StringRequest {
+public class EditRequest extends StringRequest {
     final static private String URL = "http://172.31.42.158/";
     private Map<String, String> parameters;
 
-    public LoginRequest(String userID, String userPW, Response.Listener<String> listener) {
-        super(Method.POST, URL+"Login.php", listener, null);
+    public EditRequest(String title, String text, Response.Listener<String> listener) {
+        super(Method.POST, URL+"Edit.php", listener, null);
         parameters = new HashMap<>();
-        parameters.put("userID", userID);
-        parameters.put("userPW", userPW);
+        parameters.put("title", title);
+        parameters.put("text", text);
 
     }
 
