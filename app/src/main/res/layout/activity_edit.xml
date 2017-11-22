@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.gmlrj.mysns.EditActivity">
+    tools:context="com.example.gmlrj.mysns.EditActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
 
     <EditText
         android:id="@+id/et_title"
@@ -13,50 +15,36 @@
         android:ems="10"
         android:hint="Title"
         android:inputType="textPersonName"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginStart="16dp"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp" />
+        tools:layout_editor_absoluteY="54dp"
+        tools:layout_editor_absoluteX="-334dp"
+        android:layout_alignTop="@+id/bt_submit"
+        android:layout_alignStart="@+id/iv_photo" />
 
     <ImageView
         android:id="@+id/iv_photo"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="22dp"
-        android:layout_marginTop="21dp"
-        app:layout_constraintBottom_toTopOf="@+id/et_text"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="@+id/et_title"
-        app:layout_constraintRight_toLeftOf="@+id/bt_photo"
-        app:layout_constraintTop_toBottomOf="@+id/et_title"
-        app:layout_constraintVertical_bias="0.0"
+        android:layout_width="202dp"
+        android:layout_height="175dp"
         app:srcCompat="@android:drawable/ic_menu_gallery"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        tools:layout_editor_absoluteY="117dp"
+        tools:layout_editor_absoluteX="-334dp"
+        android:layout_above="@+id/et_text"
+        android:layout_alignStart="@+id/et_text"
+        android:layout_marginBottom="19dp" />
 
     <ImageButton
         android:id="@+id/bt_photo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="125dp"
-        android:layout_marginRight="125dp"
-        android:layout_marginTop="210dp"
-        android:onClick="SelectPic"
-        app:layout_constraintRight_toRightOf="@+id/et_text"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_camera"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        tools:layout_editor_absoluteY="240dp"
+        tools:layout_editor_absoluteX="-119dp"
+        android:layout_alignBottom="@+id/iv_photo"
+        android:layout_toEndOf="@+id/et_title" />
 
     <EditText
         android:id="@+id/et_text"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="345dp"
+        android:layout_height="212dp"
         android:ems="10"
         android:gravity="top"
         android:hint="Text"
@@ -68,14 +56,21 @@
         app:layout_constraintTop_toBottomOf="@+id/bt_photo"
         tools:editable="false"
         tools:enabled="false"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginStart="19dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintVertical_bias="0.0" />
+        tools:layout_editor_absoluteX="-334dp"
+        tools:layout_editor_absoluteY="317dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="18dp" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/bt_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        tools:layout_editor_absoluteX="-75dp"
+        tools:layout_editor_absoluteY="54dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/et_text"
+        android:layout_marginTop="19dp" />
+
+</RelativeLayout>
