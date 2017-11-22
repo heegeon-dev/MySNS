@@ -1,32 +1,26 @@
 package com.example.gmlrj.mysns;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Matrix;
-import android.media.ExifInterface;
 import android.net.Uri;
-import android.os.Environment;
-import android.provider.MediaStore;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONObject;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -37,6 +31,8 @@ public class EditActivity extends AppCompatActivity {
     private Uri imageUri;
     private ImageView iv_image;
     private Bitmap image_bitmap;
+    private static final int PICK_FROM_CAMERA = 1;
+    private static final int PICK_FROM_GALLERY = 2;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -50,9 +46,9 @@ public class EditActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        iv_image = (ImageView) this.findViewById(R.id.iv_photo);
 
         final EditText et_title = (EditText) findViewById(R.id.et_title);
+        final ImageView iv_photo = (ImageView) findViewById(R.id.iv_photo);
         final EditText et_text = (EditText) findViewById(R.id.et_text);
 
         Button bt_submit = (Button) findViewById(R.id.bt_submit);

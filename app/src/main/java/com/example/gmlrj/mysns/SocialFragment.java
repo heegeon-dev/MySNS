@@ -3,6 +3,7 @@ package com.example.gmlrj.mysns;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
+
 import android.app.Fragment;
 import android.view.View;
 import android.view.ViewGroup;

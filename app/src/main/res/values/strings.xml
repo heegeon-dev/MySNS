@@ -11,4 +11,23 @@
     <string name="ic_setting">Setting</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_ar">ARActivity</string>
+    <!-- AR -->
+    <string name="hello">Hello World, ASimpleAppUsingARActivity!</string>
+    <!--   <string name="app_name">A Simple App Using AR</string> -->
+    <string name="xAxis">X Axis:</string>
+    <string name="yAxis">Y Axis:</string>
+    <string name="zAxis">Z Axis:</string>
+    <string name="heading">Heading:</string>
+    <string name="pitch">Pitch:</string>
+    <string name="roll">Roll:</string>
+    <string name="altitude">Altitude:</string>
+    <string name="longitude">Longitude:</string>
+    <string name="latitude">Latitude:</string>
+    <string name="empty"></string>
+    <string name="help">This is the example app from Chapter 6 of Pro Android Augmented Reality. This app outlines some of the basic features of Augmented Reality and how to implement them in real world applications.</string>
+    <string name="helpLabel">Help</string>
+    <string name="title_activity_navi2">NaviActivity2</string>
+    <!-- 변경해야함 -->
+
 </resources>
