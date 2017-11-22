@@ -1,52 +1,48 @@
 package com.example.gmlrj.mysns;
 
-import android.content.ActivityNotFoundException;
-import android.content.Context;
-import android.content.DialogInterface;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
-import android.media.ExifInterface;
 import android.net.Uri;
-import android.os.Environment;
-import android.provider.MediaStore;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.NavUtils;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
 
 public class EditActivity extends AppCompatActivity {
 
     private Uri imageUri;
     private ImageView iv_image;
     private Bitmap image_bitmap;
-    private static final int PICK_FROM_CAMERA = 1;
-    private static final int PICK_FROM_GALLERY = 2;
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_edit, menu);
+        return true;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-//        iv_image = (ImageView) this.findViewById(R.id.ImageView);
 
-        iv_image = (ImageView) findViewById(R.id.iv_image);
-    }
+        final EditText et_title = (EditText) findViewById(R.id.et_title);
+        final ImageView iv_photo = (ImageView) findViewById(R.id.iv_photo);
+        final EditText et_text = (EditText) findViewById(R.id.et_text);
 
         Button bt_submit = (Button) findViewById(R.id.bt_submit);
 
@@ -82,7 +78,7 @@ public class EditActivity extends AppCompatActivity {
                 queue.add(editRequest);
             }
         });
-   }
+    }
 
 //    @Override
 //    public boolean onOptionsItemSelected(MenuItem item) {
@@ -251,4 +247,4 @@ public class EditActivity extends AppCompatActivity {
 //            }
 //            return bitmap;
 //        }
-    }
+}
