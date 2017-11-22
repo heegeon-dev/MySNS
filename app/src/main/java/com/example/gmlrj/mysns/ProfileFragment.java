@@ -77,37 +77,37 @@ public class ProfileFragment extends Fragment {
         });
         return view;
     }
-    protected void showList() {
-        try {
-            JSONObject jsonObj = new JSONObject(myJSON);
-            profiles = jsonObj.getJSONArray(TAG_RESULTS);
-
-            for (int i = 0; i < profiles.length(); i++) {
-                JSONObject c = profiles.getJSONObject(i);
-                String title = c.getString(TAG_TITLE);
-                String text = c.getString(TAG_TEXT);
-
-                HashMap<String, String> profile = new HashMap<>();
-
-                profile.put(TAG_TITLE, title);
-                profile.put(TAG_TEXT, text);
-
-                profileList.add(profile);
-            }
-
-            ListAdapter adapter = new SimpleAdapter(
-                    ProfileFragment.this.getActivity(), profileList, R.layout.item,
-                    new String[]{TAG_TITLE, TAG_TEXT},
-                    new int[]{R.id.tv_title, R.id.tv_text}
-            );
-
-            list.setAdapter(adapter);
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-    }
+//    protected void showList() {
+//        try {
+//            JSONObject jsonObj = new JSONObject(myJSON);
+//            profiles = jsonObj.getJSONArray(TAG_RESULTS);
+//
+//            for (int i = 0; i < profiles.length(); i++) {
+//                JSONObject c = profiles.getJSONObject(i);
+//                String title = c.getString(TAG_TITLE);
+//                String text = c.getString(TAG_TEXT);
+//
+//                HashMap<String, String> profile = new HashMap<>();
+//
+//                profile.put(TAG_TITLE, title);
+//                profile.put(TAG_TEXT, text);
+//
+//                profileList.add(profile);
+//            }
+//
+//            ListAdapter adapter = new SimpleAdapter(
+//                    this.getActivity(), profileList, R.layout.item,
+//                    new String[]{TAG_TITLE, TAG_TEXT},
+//                    new int[]{R.id.title, R.id.text}
+//            );
+//
+//            list.setAdapter(adapter);
+//
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
 
     public void getData(String url) {
         class GetDataJSON extends AsyncTask<String, Void, String> {
@@ -139,11 +139,11 @@ public class ProfileFragment extends Fragment {
 
             }
 
-            @Override
-            protected void onPostExecute(String result) {
-                myJSON = result;
-                showList();
-            }
+//            @Override
+//            protected void onPostExecute(String result) {
+//                myJSON = result;
+//                showList();
+//            }
         }
         GetDataJSON g = new GetDataJSON();
         g.execute(url);
