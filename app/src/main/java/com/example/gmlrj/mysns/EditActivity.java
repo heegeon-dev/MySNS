@@ -44,33 +44,31 @@ public class EditActivity extends AppCompatActivity {
         final ImageView iv_photo = (ImageView) findViewById(R.id.iv_photo);
         final EditText et_text = (EditText) findViewById(R.id.et_text);
 
-        Button bt_submit = (Button) findViewById(R.id.action_submit);
+        Button bt_submit = (Button) findViewById(R.id.bt_submit);
 
-        bt_submit.setOnClickListener(new View.OnClickListener(){
+        bt_submit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 String title = et_title.getText().toString();
                 String text = et_text.getText().toString();
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        try{
+                        try {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
-                            if(success){
-                                Intent intent = new Intent(EditActivity.this, ProfileFragment.class);
-                                EditActivity.this.startActivity(intent);
-                            }
-                            else{
+                            if (success) {
+                                finish();
+                            } else {
                                 AlertDialog.Builder builer = new AlertDialog.Builder(EditActivity.this);
                                 builer.setMessage("글쓰기에 실패하였습니다.")
-                                        .setNegativeButton("다시 시도",null)
+                                        .setNegativeButton("다시 시도", null)
                                         .create()
                                         .show();
                             }
 
-                        } catch (Exception e){
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }
@@ -80,8 +78,7 @@ public class EditActivity extends AppCompatActivity {
                 queue.add(editRequest);
             }
         });
-    }
-
+   }
 
 //    @Override
 //    public boolean onOptionsItemSelected(MenuItem item) {
