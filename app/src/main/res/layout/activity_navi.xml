@@ -13,11 +13,8 @@
     android:layout_height="match_parent"
 
     android:orientation="vertical"
-
     android:weightSum="1"
-
     tools:context="com.example.gmlrj.mysns.NaviActivity">
-
 
 
     <fragment
@@ -30,10 +27,9 @@
 
         android:layout_height="wrap_content"
 
-        tools:layout="@layout/search_fragment"
+        android:layout_weight="0.93"
 
-        android:layout_weight="0.93" />
-
+        tools:layout="@layout/search_fragment" />
 
 
     <android.support.design.widget.BottomNavigationView
@@ -47,9 +43,14 @@
         android:layout_gravity="bottom"
 
         android:background="?android:attr/windowBackground"
+        app:itemIconTint="@drawable/icon_color_state"
+        app:itemTextColor="@drawable/icon_color_state"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
 
         app:menu="@menu/navigation" />
-
 
 
 </LinearLayout>

@@ -78,7 +78,7 @@ public class ProfileFragment extends Fragment {
         });
         return view;
     }
-    protected void showList() {
+    /*protected void showList() {
         try {
             JSONObject jsonObj = new JSONObject(myJSON);
             profiles = jsonObj.getJSONArray(TAG_RESULTS);
@@ -108,7 +108,7 @@ public class ProfileFragment extends Fragment {
             e.printStackTrace();
         }
 
-    }
+    }*/
 
     public void getData(String url) {
         class GetDataJSON extends AsyncTask<String, Void, String> {
@@ -140,11 +140,11 @@ public class ProfileFragment extends Fragment {
 
             }
 
-            @Override
+          /*  @Override
             protected void onPostExecute(String result) {
                 myJSON = result;
                 showList();
-            }
+            }*/
         }
         GetDataJSON g = new GetDataJSON();
         g.execute(url);

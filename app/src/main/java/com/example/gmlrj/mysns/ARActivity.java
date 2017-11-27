@@ -26,6 +26,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+
 public class ARActivity extends Activity {
     SurfaceView cameraPreview;
     SurfaceHolder previewHolder;

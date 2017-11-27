@@ -8,7 +8,7 @@ import java.util.Map;
 
 
 public class SignupRequest extends StringRequest {
-    final static private String URL = "http://172.31.45.152/";
+    final static private String URL = "http://192.168.25.107/";
     private Map<String, String> parameters;
 
     public SignupRequest(String userID, String userPW, Response.Listener<String> listener) {

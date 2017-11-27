@@ -8,7 +8,7 @@ import java.util.Map;
 
 
 public class EditRequest extends StringRequest {
-    final static private String URL = "http://172.31.42.158/";
+    final static private String URL = "http://192.168.25.107/";
     private Map<String, String> parameters;
 
     public EditRequest(String title, String text, Response.Listener<String> listener) {
