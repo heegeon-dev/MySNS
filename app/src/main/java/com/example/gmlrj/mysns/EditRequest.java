@@ -8,11 +8,11 @@ import java.util.Map;
 
 
 public class EditRequest extends StringRequest {
-    final static private String URL = "http://192.168.25.107/";
+    final static private String URL = "http://172.31.39.107/";
     private Map<String, String> parameters;
 
     public EditRequest(String title, String text, Response.Listener<String> listener) {
-        super(Method.POST, URL+"Edit.php", listener, null);
+        super(Method.POST, URL+"list.php", listener, null);
         parameters = new HashMap<>();
         parameters.put("title", title);
         parameters.put("text", text);

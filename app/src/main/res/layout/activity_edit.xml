@@ -24,12 +24,13 @@
         android:id="@+id/iv_photo"
         android:layout_width="202dp"
         android:layout_height="175dp"
-        app:srcCompat="@android:drawable/ic_menu_gallery"
-        tools:layout_editor_absoluteY="117dp"
-        tools:layout_editor_absoluteX="-334dp"
         android:layout_above="@+id/et_text"
         android:layout_alignStart="@+id/et_text"
-        android:layout_marginBottom="19dp" />
+        android:layout_marginBottom="19dp"
+        android:onClick="SelectPic"
+        app:srcCompat="@android:drawable/ic_menu_gallery"
+        tools:layout_editor_absoluteX="-334dp"
+        tools:layout_editor_absoluteY="117dp" />
 
     <ImageButton
         android:id="@+id/bt_photo"

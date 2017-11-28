@@ -44,15 +44,15 @@
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Title"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/et_search"
-        app:layout_constraintRight_toRightOf="@+id/et_search"
+        android:layout_above="@+id/bt_search"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="27dp"
         android:layout_marginRight="30dp"
-        android:layout_above="@+id/bt_search"
-        android:layout_centerHorizontal="true" />
+        android:text="MySNS"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintBottom_toTopOf="@+id/et_search"
+        app:layout_constraintRight_toRightOf="@+id/et_search"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintRight_creator="1" />
 
 </RelativeLayout>

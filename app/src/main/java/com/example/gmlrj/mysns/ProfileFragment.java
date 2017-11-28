@@ -1,33 +1,48 @@
 package com.example.gmlrj.mysns;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.app.Fragment;
 
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import static android.R.attr.data;
+
 public class ProfileFragment extends Fragment {
 
-    String myJSON;
+    final int REQ_CODE_SELECT_IMAGE=100;
 
+    String myJSON;
+    private ImageView iv_image;
+    private Bitmap image_bitmap;
     private static final String TAG_RESULTS = "result";
     private static final String TAG_TITLE = "title";
     private static final String TAG_TEXT = "text";
@@ -42,15 +57,24 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.profile_fragment, container, false);
 
+
         list = (ListView) view.findViewById(R.id.listview_pf);
         profileList = new ArrayList<HashMap<String, String>>();
         getData("http:/172.31.42.158/connection.php"); //수정 필요
 
         ImageButton bt_add = (ImageButton) view.findViewById(R.id.bt_add);
 
-//        ListView listView;
-//        ListViewAdapter adapter;
-//
+        ListView listView;
+        ListViewAdapter adapter = new ListViewAdapter();
+
+        Bundle bundle = getArguments();
+        if(bundle!=null)
+        {
+            String title = bundle.getString("title");
+        }
+//        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_location),
+//                bundle.getString("title"), "Account Box Black 36dp");
+////
 //        adapter = new ListViewAdapter();
 //
 //        listView = (ListView) view.findViewById(R.id.listview_pf);
@@ -149,5 +173,8 @@ public class ProfileFragment extends Fragment {
         GetDataJSON g = new GetDataJSON();
         g.execute(url);
     }
+
+
+
 
 }

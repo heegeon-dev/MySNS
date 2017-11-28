@@ -1,6 +1,7 @@
 package com.example.gmlrj.mysns;
 
 import android.app.AlertDialog;
+import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -10,6 +11,9 @@ import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -61,7 +65,7 @@ public class EditActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         final EditText et_title = (EditText) findViewById(R.id.et_title);
-        final ImageView iv_photo = (ImageView) findViewById(R.id.iv_photo);
+        iv_image = (ImageView)findViewById(R.id.iv_photo);
         final EditText et_text = (EditText) findViewById(R.id.et_text);
 
         Button bt_submit = (Button) findViewById(R.id.bt_submit);
@@ -80,6 +84,10 @@ public class EditActivity extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
                             if (success) {
+                                ProfileFragment fragment = new ProfileFragment();
+                                Bundle bundle = new Bundle();
+                                bundle.putString("title",String.valueOf(et_title.toString()));
+                                fragment.setArguments(bundle);
                                 finish();
                             } else {
                                 android.app.AlertDialog.Builder builer = new android.app.AlertDialog.Builder(EditActivity.this);
@@ -155,6 +163,7 @@ public class EditActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
+
 
             switch (requestCode) {
 

@@ -5,8 +5,8 @@ android {
     buildToolsVersion '24.0.2'
     defaultConfig {
         applicationId "com.example.gmlrj.mysns"
-        minSdkVersion 19
-        targetSdkVersion 19
+        minSdkVersion 23
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

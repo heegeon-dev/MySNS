@@ -11,11 +11,12 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="39dp"
         android:layout_marginTop="28dp"
-        app:srcCompat="@drawable/ic_person"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:src = "@drawable/one"
+        app:srcCompat="@drawable/ic_person" />
 
     <TextView
         android:id="@+id/tv_userName"
@@ -25,7 +26,7 @@
         android:layout_alignStart="@+id/imageView"
         android:layout_below="@+id/imageView"
         android:layout_marginTop="19dp"
-        android:text="UserName" />
+        android:text="원빈" />
 
     <ImageButton
         android:id="@+id/bt_add"
